@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LYVIA — ADMIN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-bg">
+      <div class="login-bg-star s1">★</div>
+      <div class="login-bg-star s2">✦</div>
+      <div class="login-bg-star s3">✧</div>
+      <div class="login-bg-star s4">♡</div>
+    </div>
+
+    <div class="login-box">
+      <div class="login-logo glitch-text" data-text="ADMIN">ADMIN</div>
+      <p class="login-sub">painel de controle · lyvia</p>
+
+      <div class="login-form">
+        <label class="lf-label">SENHA DE ACESSO</label>
+        <div class="lf-input-wrap">
+          <input
+            type="password"
+            id="passwordInput"
+            class="lf-input"
+            placeholder="••••••••••"
+            onkeydown="if(event.key==='Enter') checkPassword()"
+          />
+          <button class="lf-toggle" onclick="togglePassword()" id="toggleBtn">👁</button>
+        </div>
+        <button class="lf-btn" onclick="checkPassword()">ENTRAR →</button>
+        <p class="lf-error" id="loginError"></p>
+      </div>
+
+      <a href="index.html" class="login-back">← voltar ao site</a>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="admin-panel" id="adminPanel" style="display:none">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sb-logo">
+        <span class="sb-logo-text">LYV</span>
+        <span class="sb-logo-sub">admin</span>
+      </div>
+      <nav class="sb-nav">
+        <button class="sb-item active" onclick="showTab('sobre', this)">
+          <span class="sb-icon">◈</span> SOBRE MIM
+        </button>
+        <button class="sb-item" onclick="showTab('ilustracoes', this)">
+          <span class="sb-icon">🎨</span> ILUSTRAÇÕES
+        </button>
+        <button class="sb-item" onclick="showTab('textos', this)">
+          <span class="sb-icon">✍️</span> TEXTOS
+        </button>
+        <button class="sb-item" onclick="showTab('config', this)">
+          <span class="sb-icon">⚙</span> CONFIG
+        </button>
+      </nav>
+      <div class="sb-footer">
+        <button class="sb-logout" onclick="logout()">sair →</button>
+        <a href="index.html" class="sb-site-link" target="_blank">ver site ↗</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- SOBRE TAB -->
+      <div class="tab-content active" id="tab-sobre">
+        <div class="tab-header">
+          <h1 class="tab-title">SOBRE MIM</h1>
+          <button class="save-btn" onclick="saveSobre()">SALVAR ALTERAÇÕES</button>
+        </div>
+
+        <div class="form-section">
+          <label class="form-label">TÍTULO</label>
+          <input type="text" id="sobreTitleInput" class="form-input" />
+        </div>
+
+        <div class="form-section">
+          <label class="form-label">TEXTO (use linha em branco para separar parágrafos)</label>
+          <textarea id="sobreContentInput" class="form-textarea" rows="10"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-section">
+            <label class="form-label">ARTES (número)</label>
+            <input type="number" id="statArtesInput" class="form-input" />
+          </div>
+          <div class="form-section">
+            <label class="form-label">SEGUIDORES</label>
+            <input type="number" id="statSegInput" class="form-input" />
+          </div>
+          <div class="form-section">
+            <label class="form-label">ANOS CRIANDO</label>
+            <input type="number" id="statAnosInput" class="form-input" />
+          </div>
+        </div>
+
+        <div class="save-feedback" id="sobreFeedback"></div>
+      </div>
+
+      <!-- ILUSTRAÇÕES TAB -->
+      <div class="tab-content" id="tab-ilustracoes" style="display:none">
+        <div class="tab-header">
+          <h1 class="tab-title">ILUSTRAÇÕES</h1>
+          <button class="add-btn" onclick="openAddModal('ilustracoes')">+ ADICIONAR</button>
+        </div>
+        <div class="items-grid" id="ilustracoesGrid"></div>
+      </div>
+
+      <!-- TEXTOS TAB -->
+      <div class="tab-content" id="tab-textos" style="display:none">
+        <div class="tab-header">
+          <h1 class="tab-title">TEXTOS</h1>
+          <button class="add-btn" onclick="openAddModal('textos')">+ ADICIONAR</button>
+        </div>
+        <div class="items-list" id="textosGrid"></div>
+      </div>
+
+      <!-- CONFIG TAB -->
+      <div class="tab-content" id="tab-config" style="display:none">
+        <div class="tab-header">
+          <h1 class="tab-title">CONFIGURAÇÕES</h1>
+        </div>
+        <div class="config-section">
+          <h3 class="config-h3">REDES SOCIAIS</h3>
+          <div class="form-section">
+            <label class="form-label">TIKTOK (@handle)</label>
+            <input type="text" id="tiktokInput" class="form-input" value="@thxyx.lyy" />
+          </div>
+          <div class="form-section">
+            <label class="form-label">INSTAGRAM (@handle)</label>
+            <input type="text" id="instagramInput" class="form-input" value="@thxyx.lyy" />
+          </div>
+          <button class="save-btn" onclick="saveConfig()">SALVAR CONFIG</button>
+          <div class="save-feedback" id="configFeedback"></div>
+        </div>
+
+        <div class="config-section danger-zone">
+          <h3 class="config-h3 danger">⚠ ZONA DE PERIGO</h3>
+          <p class="danger-text">Estas ações são irreversíveis.</p>
+          <button class="danger-btn" onclick="resetData()">RESETAR TODOS OS DADOS</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ADD/EDIT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 class="modal-title" id="modalTitle">ADICIONAR</h2>
+
+      <div id="modalIlustForm" style="display:none">
+        <div class="form-section">
+          <label class="form-label">TÍTULO</label>
+          <input type="text" id="ilustTitleInput" class="form-input" placeholder="título da ilustração" />
+        </div>
+        <div class="form-section">
+          <label class="form-label">URL DA IMAGEM (opcional)</label>
+          <input type="text" id="ilustImgInput" class="form-input" placeholder="https://..." />
+        </div>
+        <div class="form-section">
+          <label class="form-label">DESCRIÇÃO</label>
+          <input type="text" id="ilustDescInput" class="form-input" placeholder="técnica, série..." />
+        </div>
+        <div class="form-section">
+          <label class="form-label">ANO</label>
+          <input type="text" id="ilustDateInput" class="form-input" value="2025" />
+        </div>
+        <button class="save-btn" onclick="saveIlust()">SALVAR</button>
+      </div>
+
+      <div id="modalTextForm" style="display:none">
+        <div class="form-section">
+          <label class="form-label">TÍTULO</label>
+          <input type="text" id="textTitleInput" class="form-input" placeholder="título do texto" />
+        </div>
+        <div class="form-section">
+          <label class="form-label">TRECHO (aparece no card)</label>
+          <input type="text" id="textExcerptInput" class="form-input" placeholder="início do texto..." />
+        </div>
+        <div class="form-section">
+          <label class="form-label">TEXTO COMPLETO</label>
+          <textarea id="textContentInput" class="form-textarea" rows="10" placeholder="escreva aqui..."></textarea>
+        </div>
+        <div class="form-section">
+          <label class="form-label">ANO</label>
+          <input type="text" id="textDateInput" class="form-input" value="2025" />
+        </div>
+        <button class="save-btn" onclick="saveText()">SALVAR</button>
+      </div>
+
+      <div class="save-feedback" id="modalFeedback"></div>
+    </div>
+  </div>
+
+  <!-- CONFIRM DELETE MODAL -->
+  <div class="modal-overlay" id="deleteOverlay" style="display:none">
+    <div class="modal-box modal-small">
+      <h2 class="modal-title danger">DELETAR?</h2>
+      <p class="modal-text">Essa ação não pode ser desfeita.</p>
+      <div class="modal-btns">
+        <button class="cancel-btn" onclick="cancelDelete()">CANCELAR</button>
+        <button class="danger-btn" id="confirmDeleteBtn">DELETAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

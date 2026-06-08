@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LYVIA — arte que sangra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- CURSOR CUSTOM -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- LOADING SCREEN -->
+<div class="loader" id="loader">
+  <div class="loader-glitch" data-text="LYVIA">LYVIA</div>
+  <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+  <p class="loader-sub">carregando o caos...</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="nav-logo glitch-text" data-text="LYV" href="#home">LYV</a>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link">HOME</a></li>
+    <li><a href="#sobre" class="nav-link">SOBRE</a></li>
+    <li><a href="#artes" class="nav-link">ARTES</a></li>
+    <li><a href="#redes" class="nav-link">REDES</a></li>
+  </ul>
+  <a href="admin.html" class="nav-admin">⚙</a>
+</nav>
+
+<!-- HOME SECTION -->
+<section class="section home" id="home">
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="home-noise"></div>
+
+  <div class="floating-text ft1">★ arte ★</div>
+  <div class="floating-text ft2">caos criativo</div>
+  <div class="floating-text ft3">2 0 2 5</div>
+  <div class="floating-text ft4">✦ lyvia ✦</div>
+
+  <div class="home-center">
+    <div class="star-3d" id="star3d">
+      <div class="star-face f1">★</div>
+      <div class="star-face f2">✦</div>
+      <div class="star-face f3">✧</div>
+      <div class="star-face f4">✩</div>
+    </div>
+    <h1 class="home-title">
+      <span class="ht-line1 glitch-text" data-text="LYVIA">LYVIA</span>
+      <span class="ht-sub">ilustrações · textos · caos</span>
+    </h1>
+    <p class="home-tagline">arte que transborda, mente que não para</p>
+    <div class="home-badges">
+      <span class="badge">✦ Y2K</span>
+      <span class="badge">✦ ALT</span>
+      <span class="badge">✦ INDIE</span>
+    </div>
+    <a href="#artes" class="btn-main">VER ARTES <span>→</span></a>
+  </div>
+
+  <!-- 3D orbiting elements -->
+  <div class="orbit-system" id="orbitSystem">
+    <div class="orbit orbit1">
+      <div class="orbit-item oi1">★</div>
+    </div>
+    <div class="orbit orbit2">
+      <div class="orbit-item oi2">♡</div>
+    </div>
+    <div class="orbit orbit3">
+      <div class="orbit-item oi3">✦</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">SCROLL ↓</div>
+</section>
+
+<!-- SOBRE SECTION -->
+<section class="section sobre" id="sobre">
+  <div class="sobre-bg-text">SOBRE</div>
+
+  <div class="sobre-container">
+    <div class="sobre-img-side">
+      <div class="sobre-frame">
+        <div class="sobre-photo-placeholder">
+          <div class="photo-glitch">
+            <div class="pg-line"></div>
+            <div class="pg-line"></div>
+            <div class="pg-line"></div>
+          </div>
+          <span class="photo-icon">◈</span>
+          <p class="photo-label">foto aqui</p>
+        </div>
+        <div class="sobre-frame-deco deco1">★</div>
+        <div class="sobre-frame-deco deco2">✦</div>
+        <div class="sobre-frame-deco deco3">♡</div>
+      </div>
+      <div class="sobre-stats">
+        <div class="stat-item">
+          <span class="stat-n" id="statArtes">0</span>
+          <span class="stat-l">artes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-n" id="statSeguidores">0</span>
+          <span class="stat-l">seguidores</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-n" id="statAnos">0</span>
+          <span class="stat-l">anos criando</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-text-side">
+      <div class="sobre-tag">✦ SOBRE MIM</div>
+      <h2 class="sobre-title" id="sobreTitle">oi, eu sou a Lyvia.</h2>
+      <div class="sobre-content" id="sobreContent">
+        <p>artista alternativa que vive entre ilustrações e palavras. minha arte nasce do caos emocional, da nostalgia y2k e de tudo que é intenso demais pra caber em palavras comuns.</p>
+        <p>crio porque preciso. porque a tela aguenta o que a cabeça não consegue segurar. porque cada traço é uma confissão e cada texto é uma ferida bonita.</p>
+        <p>bem vinda ao meu mundo.</p>
+      </div>
+
+      <div class="sobre-tags-list">
+        <span class="sobre-tag-item">ilustração</span>
+        <span class="sobre-tag-item">poesia</span>
+        <span class="sobre-tag-item">y2k</span>
+        <span class="sobre-tag-item">alternativo</span>
+        <span class="sobre-tag-item">indie</span>
+        <span class="sobre-tag-item">caos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTES SECTION -->
+<section class="section artes" id="artes">
+  <div class="artes-noise"></div>
+
+  <!-- CAT GATE -->
+  <div class="cat-gate" id="catGate">
+    <div class="cat-bg-text">ARTES</div>
+    <div class="cat-scene">
+      <div class="cat-wrapper" id="catWrapper">
+        <!-- 3D CAT SVG -->
+        <div class="cat-3d" id="cat3d">
+          <svg class="cat-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body -->
+            <ellipse cx="100" cy="140" rx="55" ry="45" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <!-- Head -->
+            <circle cx="100" cy="85" r="42" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <!-- Left ear -->
+            <polygon points="65,50 55,18 85,38" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <polygon points="66,47 59,24 82,40" fill="#ff2d78" opacity="0.5"/>
+            <!-- Right ear -->
+            <polygon points="135,50 145,18 115,38" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <polygon points="134,47 141,24 118,40" fill="#ff2d78" opacity="0.5"/>
+            <!-- Eyes -->
+            <ellipse cx="85" cy="83" rx="10" ry="12" fill="#ff2d78"/>
+            <ellipse cx="115" cy="83" rx="10" ry="12" fill="#ff2d78"/>
+            <ellipse cx="85" cy="85" rx="4" ry="9" fill="#0d0014"/>
+            <ellipse cx="115" cy="85" rx="4" ry="9" fill="#0d0014"/>
+            <circle cx="82" cy="80" r="2" fill="white" opacity="0.8"/>
+            <circle cx="112" cy="80" r="2" fill="white" opacity="0.8"/>
+            <!-- Nose -->
+            <polygon points="100,95 97,100 103,100" fill="#ff2d78"/>
+            <!-- Mouth -->
+            <path d="M97,100 Q100,105 103,100" stroke="#ff2d78" stroke-width="1.5" fill="none"/>
+            <!-- Whiskers left -->
+            <line x1="60" y1="93" x2="90" y2="97" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <line x1="58" y1="100" x2="90" y2="100" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <line x1="60" y1="107" x2="90" y2="103" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <!-- Whiskers right -->
+            <line x1="140" y1="93" x2="110" y2="97" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <line x1="142" y1="100" x2="110" y2="100" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <line x1="140" y1="107" x2="110" y2="103" stroke="#ff2d78" stroke-width="1" opacity="0.7"/>
+            <!-- Paws -->
+            <ellipse cx="75" cy="178" rx="18" ry="10" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <ellipse cx="125" cy="178" rx="18" ry="10" fill="#1a0a2e" stroke="#ff2d78" stroke-width="1.5"/>
+            <!-- Tail -->
+            <path d="M155,145 Q185,120 175,90 Q165,60 150,80" stroke="#ff2d78" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Collar -->
+            <path d="M58,120 Q100,128 142,120" stroke="#ff2d78" stroke-width="3" fill="none"/>
+            <circle cx="100" cy="125" r="5" fill="#ff2d78"/>
+            <!-- Star decoration -->
+            <text x="88" y="130" fill="white" font-size="8" opacity="0.8">★</text>
+          </svg>
+          <!-- Glow rings -->
+          <div class="cat-glow-ring r1"></div>
+          <div class="cat-glow-ring r2"></div>
+        </div>
+
+        <div class="cat-speech" id="catSpeech">
+          <span>clique em mim!</span>
+        </div>
+      </div>
+
+      <div class="cat-particles" id="catParticles"></div>
+    </div>
+
+    <!-- Options popup -->
+    <div class="cat-options" id="catOptions">
+      <button class="cat-opt-btn" onclick="showGallery('ilustracoes')">
+        <span class="cob-icon">🎨</span>
+        <span class="cob-label">ILUSTRAÇÕES</span>
+      </button>
+      <button class="cat-opt-btn" onclick="showGallery('textos')">
+        <span class="cob-icon">✍️</span>
+        <span class="cob-label">TEXTOS</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- GALLERY VIEW -->
+  <div class="gallery-view" id="galleryView" style="display:none">
+    <div class="gallery-header">
+      <button class="back-btn" onclick="hideFallery()">← VOLTAR</button>
+      <h2 class="gallery-title" id="galleryTitle">ILUSTRAÇÕES</h2>
+      <div class="gallery-filter">
+        <button class="gf-btn active" onclick="filterGallery('all', this)">TODOS</button>
+        <button class="gf-btn" onclick="filterGallery('recente', this)">RECENTES</button>
+      </div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lb-content" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="" />
+      <div class="lb-img-placeholder" id="lbPlaceholder">
+        <span>✦</span>
+      </div>
+    </div>
+    <div class="lb-info">
+      <h3 id="lbTitle">Título</h3>
+      <p id="lbDesc">Descrição</p>
+    </div>
+  </div>
+</div>
+
+<!-- TEXT MODAL -->
+<div class="text-modal" id="textModal">
+  <div class="tm-content">
+    <button class="tm-close" onclick="closeTextModal()">✕</button>
+    <div class="tm-header">
+      <span class="tm-tag">✦ TEXTO</span>
+      <h3 id="tmTitle">Título</h3>
+    </div>
+    <div class="tm-body" id="tmBody"></div>
+  </div>
+</div>
+
+<!-- REDES SECTION -->
+<section class="section redes" id="redes">
+  <div class="redes-bg-text">REDES</div>
+
+  <div class="redes-container">
+    <div class="redes-header">
+      <span class="redes-tag">✦ ME ENCONTRE</span>
+      <h2 class="redes-title">nas redes</h2>
+    </div>
+
+    <div class="redes-cards">
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@thxyx.lyy" target="_blank" class="rede-card tiktok-card">
+        <div class="rc-bg-anim"></div>
+        <div class="rc-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.83 1.56V6.79a4.85 4.85 0 01-1.06-.1z"/>
+          </svg>
+        </div>
+        <div class="rc-info">
+          <span class="rc-platform">TikTok</span>
+          <span class="rc-handle">@thxyx.lyy</span>
+          <span class="rc-cta">assistir vídeos →</span>
+        </div>
+        <div class="rc-deco">✦</div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/thxyx.lyy" target="_blank" class="rede-card instagram-card">
+        <div class="rc-bg-anim"></div>
+        <div class="rc-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <div class="rc-info">
+          <span class="rc-platform">Instagram</span>
+          <span class="rc-handle">@thxyx.lyy</span>
+          <span class="rc-cta">ver fotos →</span>
+        </div>
+        <div class="rc-deco">★</div>
+      </a>
+    </div>
+
+    <div class="redes-marquee">
+      <div class="marquee-track">
+        <span>★ LYVIA ★ ARTE ★ Y2K ★ ALT ★ INDIE ★ CAOS ★ CRIATIVIDADE ★ LYVIA ★ ARTE ★ Y2K ★ ALT ★ INDIE ★ CAOS ★ CRIATIVIDADE ★ LYVIA ★ ARTE ★ Y2K ★ ALT ★</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo glitch-text" data-text="LYVIA">LYVIA</div>
+    <p class="footer-sub">arte que transborda ✦ mente que não para</p>
+    <div class="footer-links">
+      <a href="admin.html" class="footer-admin-link">⚙ admin</a>
+    </div>
+    <p class="footer-copy">© 2025 lyvia — todos os direitos reservados</p>
+  </div>
+  <div class="footer-noise"></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
